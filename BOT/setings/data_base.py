@@ -48,3 +48,28 @@ class DataBase:
 DB = DataBase()
 
 Dict_raw_data_user = dict()
+
+
+#пример
+import sqlite3
+from typing import List, Tuple
+
+class DataBase:
+    def __init__(self, db_name: str):
+        """Инициализация базы данных с указанием имени базы"""
+        self.conn = sqlite3.connect(db_name)
+        self.cursor = self.conn.cursor()
+    
+    def close(self):
+        """Закрытие соединения с базой данных"""
+        self.conn.close()
+
+    # пример метода для выполнения запроса
+    def execute_query(self, query: str, params: Tuple = ()) -> List[Tuple]:
+        """Выполнение SQL запроса и возврат результата"""
+        self.cursor.execute(query, params)
+        return self.cursor.fetchall()
+
+DB = DataBase('your_database.db')
+
+Dict_raw_data_user = dict()
