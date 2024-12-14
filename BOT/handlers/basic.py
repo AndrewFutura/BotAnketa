@@ -7,7 +7,8 @@ from setings.data_base import DB, Dict_raw_data_user
 
 # из пaкета dialogs
 from dialogs import dialogs_bot
-from dialogs.questions import LIST_QUESTIONS
+from dialogs.questions import db , LIST_QUESTIONS
+from setings.data_base import DB, Dict_raw_data_user
 
 # из пакета фильтров
 from filters.basic import *
